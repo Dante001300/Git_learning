@@ -1,0 +1,34 @@
+---------------------------------------github---------------------------------after created a repository
+git init						go to source folder of the project(this will create .git file)
+git remote add origin https://github.com/Dante001300/Git_1st.git		this is the https url
+git remote -v						to check if git remote works (should have fetch and push)
+git pull origin master					to pull files from github(git pull is enough is it remember the brand)
+git pull origin main					if the above code does not work 
+type q or z to exit git log when stuck
+
+git checkout -b brandnamewhatever			To create a brand to push to github
+git add . +++ then git commit +++ git checkout master	to go back to master brand
+git merge branchnamewatever				to merge master brand and branchnamewhatever
+git push origin branchnamewhatever			to push branchnamewhatever to github
+
+git push origin --delete branchnamewhatever		delete branchnamewhatever on github
+
+
+------------------------------git push using SSH(secure socket shell)----https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key and-adding-it-to-the-ssh-agent
+				
+				Generating a new SSH key
+ls -al ~/.ssh 						to see if existing SSH keys are present.
+ssh-keygen -t ed25519 -C "tdante95@gmail.com"		generate ssh key
+
+				Adding your SSH key to the ssh-agent
+eval "$(ssh-agent -s)"					Start the ssh-agent in the background.
+ssh-add ~/.ssh/id_ed25519				Add your SSH private key to the ssh-agent.
+cat ~/.ssh/id_ed25519.pub				to open the file that has the ssh key to copy it to the clipboard
+git init
+git remote add origin git@github.com:Dante001300/Git_1st.git		makesure the URL is SSH
+git add .
+git commit -m "whatever"
+git push -u origin master or main			-u to remember the brand so next time just type git push
+
+also if you don't see the file switch brand from master to main or main to master
+							Done
